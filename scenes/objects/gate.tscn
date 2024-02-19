@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuoqg6jmyvor6"]
+
+[ext_resource type="Texture2D" uid="uid://pxmhoiavw7ql" path="res://graphics/objects/gate.png" id="1_f1pvn"]
+[ext_resource type="Script" path="res://scenes/objects/gate.gd" id="1_gc0el"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnblx"]
+size = Vector2(582.5, 129.5)
+
+[node name="Gate" type="StaticBody2D"]
+position = Vector2(543, -86)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_gc0el")
+
+[node name="Gate" type="Sprite2D" parent="."]
+texture = ExtResource("1_f1pvn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(4.28571, 2.85714)
+polygon = PackedVector2Array(-1440, -780, -1437.14, 440, -1437.14, 534.286, -1434.29, 561.429, -1428.57, 585.714, -1424.29, 600, -1415.71, 622.857, -1405.71, 644.286, -1395.71, 664.286, -1387.14, 675.714, -1377.14, 687.143, -1364.29, 701.429, -1345.71, 717.143, -1331.43, 728.571, -1312.86, 741.429, -1294.29, 751.429, -1277.14, 760, -1247.14, 770, -1221.43, 775.714, -1207.14, 777.143, -1190, 778.571, -777.143, 780, -365.714, 778.571, -365.714, 712.857, -365.714, 512.857, 482.857, 512.857, 482.857, 774.286, 1284.29, 777.143, 1341.43, 775.714, 1365.71, 770, 1388.57, 764.286, 1415.71, 754.286, 1432.86, 742.857, 1457.14, 727.143, 1477.14, 710, 1505.71, 682.857, 1522.86, 654.286, 1535.71, 630, 1541.43, 615.714, 1544.29, 608.571, 1548.57, 597.143, 1552.86, 584.286, 1558.57, 561.429, 1560, 521.429, 1560, 447.143, 1560, 365.714, 1560, 18.5714, 1560, -78.5714, 1560, -348.571, 1558.57, -780, 397.143, -780, -501.429, -780)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-775.714, 122.857)
+scale = Vector2(1.42857, 1.42857)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(587.75, 396.75)
+shape = SubResource("RectangleShape2D_gnblx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
