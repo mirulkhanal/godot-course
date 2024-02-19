@@ -1,0 +1,7 @@
+res://scenes/objects/gate.tscn
+res://scenes/player/player.tscn
+res://scenes/projectiles/grenade.tscn
+res://scenes/levels/level.tscn
+res://scenes/levels/house.tscn
+res://scenes/projectiles/laser.tscn
+res://scenes/objects/bed_node.tscn

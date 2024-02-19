@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cy0r6qutpdn2q"]
+[gd_scene load_steps=18 format=3 uid="uid://cy0r6qutpdn2q"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_as0no"]
 [ext_resource type="Texture2D" uid="uid://cdwax0vkfes5i" path="res://graphics/ground/stones.png" id="2_i1ygi"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dedxlb313546h" path="res://scenes/player/player.tscn" id="5_fmn0v"]
 [ext_resource type="Texture2D" uid="uid://dd16iw67hselx" path="res://graphics/decals/moss/moss_1.png" id="6_3qal0"]
 [ext_resource type="Texture2D" uid="uid://bhnd3f0cjwgpe" path="res://graphics/decals/moss/moss_3.png" id="7_yf0jj"]
+[ext_resource type="PackedScene" uid="uid://drme2dcsps6ar" path="res://scenes/levels/house.tscn" id="11_kj2ts"]
+[ext_resource type="PackedScene" uid="uid://bemrkeovso2c" path="res://scenes/objects/bed_node.tscn" id="14_1wnbw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xmrw2"]
 resource_name = "walls"
@@ -1843,23 +1845,19 @@ scale = Vector2(0.996307, 0.936021)
 
 [node name="Moss2" type="Sprite2D" parent="Ground/Moss"]
 position = Vector2(717.65, 448.708)
-scale = Vector2(1, 1)
 texture = ExtResource("3_afh18")
 
 [node name="Moss5" type="Sprite2D" parent="Ground/Moss"]
 position = Vector2(427.579, 340.804)
-scale = Vector2(1, 1)
 texture = ExtResource("4_p2fku")
 
 [node name="Moss6" type="Sprite2D" parent="Ground/Moss"]
 position = Vector2(427.579, 354.693)
-scale = Vector2(1, 1)
 texture = ExtResource("4_p2fku")
 
 [node name="Moss7" type="Sprite2D" parent="Ground/Moss"]
 position = Vector2(380.405, 534.176)
 rotation = -1.52716
-scale = Vector2(1, 1)
 texture = ExtResource("4_p2fku")
 
 [node name="Moss4" type="Sprite2D" parent="Ground/Moss"]
@@ -1870,7 +1868,6 @@ texture = ExtResource("5_43k0q")
 
 [node name="Moss3" type="Sprite2D" parent="Ground/Moss"]
 position = Vector2(3209.85, -414.521)
-scale = Vector2(1, 1)
 texture = ExtResource("3_afh18")
 
 [node name="Moss9" type="Sprite2D" parent="Ground/Moss"]
@@ -1935,6 +1932,10 @@ position = Vector2(103.216, -3.80237)
 scale = Vector2(0.074989, 0.074989)
 texture = ExtResource("3_ge210")
 
+[node name="House" parent="Ground" instance=ExtResource("11_kj2ts")]
+position = Vector2(-162, 1314)
+scale = Vector2(0.285, 0.285)
+
 [node name="Gate" parent="." instance=ExtResource("3_k0nch")]
 
 [node name="Player" parent="." instance=ExtResource("5_fmn0v")]
@@ -1946,6 +1947,11 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="BedNode" parent="." instance=ExtResource("14_1wnbw")]
+position = Vector2(1012, 1477)
+rotation = 1.5708
+scale = Vector2(0.81, 0.81)
 
 [connection signal="gate_entered" from="Gate" to="." method="_on_gate_gate_entered"]
 [connection signal="gate_exited" from="Gate" to="." method="_on_gate_gate_exited"]

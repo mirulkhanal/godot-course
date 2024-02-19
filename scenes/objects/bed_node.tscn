@@ -8,6 +8,12 @@
 size = Vector2(628, 362)
 
 [node name="BedNode" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(348, 210)
+shape = SubResource("RectangleShape2D_tqb1t")
 
 [node name="Bed" type="Sprite2D" parent="."]
 position = Vector2(349, 210)
@@ -20,7 +26,3 @@ texture = ExtResource("2_bhsly")
 [node name="PillowBig" type="Sprite2D" parent="."]
 position = Vector2(566, 212)
 texture = ExtResource("3_ek8cr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(348, 210)
-shape = SubResource("RectangleShape2D_tqb1t")
